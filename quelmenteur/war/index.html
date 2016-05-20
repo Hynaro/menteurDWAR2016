@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://code.angularjs.org/1.0.8/angular.js" data-require="angular.js@1.0.x" data-semver="1.0.8"></script>
+    <script src="app.js"></script>
+  </head>
+  
+  <body ng-controller="MainCtrl">
+    <button ng-hide='t==2' ng-click='login()'> login </button>
+    <div ng-show='t==2 && law < 10'>
+      <h1>{{law}}</h1>
+      <h1>{{sample[law].description}}</h1>
+     <form name="myForm">
+      <label>
+        <input type="radio" ng-model="vote" value="pour">
+        yes
+        <input type="radio" ng-model="vote" value="contre">
+        no
+        <input type="radio" ng-model="vote" value="abstention">
+        don't care
+        <input type="radio" ng-model="vote" value="49.3">
+        49.3 (yes whatever you think)
+      </label><br/><br/>
+     </form>
+      <button ng-click='click()' ng-model="bouton"> Next law </button>
+    </div>
+    <div ng-hide='law < 10'>
+      <button ng-click='results()' ng-model="bouton"> Results </button>
+      <h1 ng-show = 'afficheResultat = 1'>Votre député est {{votreDepute}}</h1>
+      <button ng-click='login()' ng-model="bouton"> Try again </button>
+    </div>
+	<li><a href="https://github.com/Hynaro/ProjetDWAR2016">Lien vers le code sur github</a></li>
+  </body>
+  
+
+</html>
